@@ -4,7 +4,6 @@
 
 #![feature(collections)]
 #![feature(convert)]
-#![feature(core)]
 
 extern crate azure;
 extern crate cssparser;
@@ -13,6 +12,7 @@ extern crate gfx;
 extern crate util;
 extern crate gleam;
 extern crate msg;
+extern crate num;
 extern crate glutin;
 
 pub mod canvas_paint_task;
