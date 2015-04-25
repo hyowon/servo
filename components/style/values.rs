@@ -13,7 +13,7 @@ macro_rules! define_css_keyword_enum {
     };
     ($name: ident: $( $css: expr => $variant: ident ),+) => {
         #[allow(non_camel_case_types)]
-        #[derive(Clone, Eq, PartialEq, FromPrimitive, Copy, Hash, Debug)]
+        #[derive(Clone, Eq, PartialEq, Copy, Hash, Debug)]
         pub enum $name {
             $( $variant ),+
         }
@@ -48,7 +48,6 @@ pub mod specified {
     use std::f32::consts::PI;
     use std::fmt;
     use std::fmt::Write;
-    use std::num::NumCast;
     use std::ops::{Add, Mul};
     use url::Url;
     use cssparser::{self, Token, Parser, ToCss, CssStringWriter};
@@ -172,7 +171,7 @@ pub mod specified {
                 &ViewportPercentageLength::Vmax(length) =>
                     length * to_unit!(cmp::max(viewport_size.width, viewport_size.height)),
             };
-            NumCast::from(value).unwrap()
+            Au::from_frac32_px(value)
         }
     }
 
