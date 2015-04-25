@@ -79,6 +79,7 @@ use string_cache::{Atom, QualName};
 use url::Url;
 use js::jsapi::JSRuntime;
 
+use num::ToPrimitive;
 use std::borrow::ToOwned;
 use std::collections::HashMap;
 use std::collections::hash_map::Entry::{Occupied, Vacant};
@@ -86,7 +87,6 @@ use std::ascii::AsciiExt;
 use std::cell::{Cell, Ref};
 use std::default::Default;
 use std::sync::mpsc::channel;
-use std::num::ToPrimitive;
 use time;
 
 #[derive(PartialEq)]
