@@ -14,6 +14,7 @@ use dom::bindings::utils::{Reflector, reflect_dom_object};
 use util::str::DOMString;
 
 use std::borrow::ToOwned;
+use std::ascii::AsciiExt;
 use std::ptr;
 
 use encoding::types::EncodingRef;
